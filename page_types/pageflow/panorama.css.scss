@@ -1,0 +1,13 @@
+@include pageflow-page-type(panorama);
+
+.js .panorama_page {
+  overflow: hidden;
+
+  .contentText {
+    margin-bottom: 200px;
+
+    @include phone {
+      margin-bottom: 100px;
+    }
+  }
+}

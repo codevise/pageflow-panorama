@@ -1,0 +1,8 @@
+de:
+  pageflow:
+    panorama:
+      page_type_name: "360° Ansicht"
+  activerecord:
+    attributes:
+      page:
+        panorama_url: "360°-Ansicht URL"

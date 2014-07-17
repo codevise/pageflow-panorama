@@ -1,0 +1,44 @@
+<div class="blackLayer"></div>
+<div class="content_and_background panorama_page">
+  <div class="close_button text_hidden_only" tabindex="4" title="360°-Ansicht verlassen und Text einblenden">Schließen</div>
+
+  <div class="backgroundArea">
+    <%= background_image_div(configuration, 'fallback_image') %>
+    <div class="videoWrapper iframeWrapper">
+    </div>
+    <%= shadow_div :opacity => configuration['gradient_opacity'] %>
+  </div>
+
+  <div class="content">
+    <div class="controls">
+      <span class="hint">360 Gradansicht</span>
+      <%= info_box(configuration) %>
+      <div class="vjs-control-bar view-control">
+        <div class="play_button vjs-controls vjs-default-skin vjs-player">
+          <a class="vjs-play-control vjs-play vjs-control" tabindex="4" title="360°-Ansicht starten"><span></span></a>
+        </div>
+        <div class="control_bar_text">
+          360°-Ansicht starten
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller">
+      <div>
+        <div class="contentWrapper">
+          <div class="page_header">
+            <h2>
+              <span class="tagline"><%= configuration['tagline'] %></span>
+              <span class="title"><%= configuration['title'] %></span>
+              <span class="subtitle"><%= configuration['subtitle'] %></span>
+              <%= background_image_tag(configuration['fallback_image_id'], {"class" => "print_image"}) %>
+            </h2>
+          </div>
+          <div class="contentText">
+            <p><%= raw configuration['text'] %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
