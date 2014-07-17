@@ -4,5 +4,5 @@ de:
       page_type_name: "360° Ansicht"
   activerecord:
     attributes:
-      page:
+      pageflow/page:
         panorama_url: "360°-Ansicht URL"

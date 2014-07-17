@@ -3,7 +3,7 @@ require 'pageflow/panorama/engine'
 module Pageflow
   module Panorama
     def self.config
-      @config ||= Configuration.new
+      @config ||= Panorama::Configuration.new
     end
 
     def self.configure(&block)

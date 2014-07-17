@@ -1,0 +1,13 @@
+# Example Nginx configuration for pageflow-panorama
+# vi: ft=nginx
+
+location /panogate/ {
+  proxy_pass http://www.panogate.de/;
+  proxy_redirect http://www.panogate.de/ $scheme://$host/panogate/;
+}
+
+location /palmfilms/ {
+  proxy_pass http://www.palmfilms.com/;
+  proxy_redirect http://www.palmfilms.com/ $scheme://$host/palmfilms/;
+}
+
