@@ -4,8 +4,8 @@
 
   <div class="backgroundArea">
     <%= background_image_div(configuration, 'fallback_image') %>
-    <div class="videoWrapper iframeWrapper">
-    </div>
+    <%= content_tag(:div, class: 'videoWrapper iframeWrapper', data: {panorama_url: panorama_url(configuration) }) do %>
+    <% end %>
     <%= shadow_div :opacity => configuration['gradient_opacity'] %>
   </div>
 

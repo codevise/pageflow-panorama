@@ -43,24 +43,30 @@ pageflow.pageType.register('panorama', _.extend({
       opacity: configuration.get('gradient_opacity') / 100
     });
 
-    if (configuration.hasChanged('panorama_url')) {
+    if (this.panoramaUrl !== configuration.getPanoramaUrl()) {
+      this.panoramaUrl = configuration.getPanoramaUrl();
+
       this._ensureIframeCreated(pageElement);
-      this.iframe.attr('src', configuration.get('panorama_url'));
+      this.iframe.attr('src', this.panoramaUrl);
     }
   },
 
   _ensureIframe: function(pageElement, configuration) {
-    if (!this.iframe && configuration.panorama_url) {
-      this._ensureIframeCreated(pageElement);
-      this.iframe.attr('src', configuration.panorama_url);
+    if (!this.iframe) {
+      var panoramaUrl = pageElement.find('.iframeWrapper').data('panoramaUrl');
 
-      $(this.iframe).load(function() {
-        $(this).contents().find('body').keydown(function(event) {
-          if(event.keyCode == 27) {
-            pageflow.hideText.deactivate();
-          }
+      if (panoramaUrl) {
+        this._ensureIframeCreated(pageElement);
+        this.iframe.attr('src', panoramaUrl);
+
+        $(this.iframe).load(function() {
+          $(this).contents().find('body').keydown(function(event) {
+            if(event.keyCode == 27) {
+              pageflow.hideText.deactivate();
+            }
+          });
         });
-      });
+      }
     }
   },
 
