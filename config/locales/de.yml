@@ -2,7 +2,30 @@ de:
   pageflow:
     panorama:
       page_type_name: "360° Ansicht"
+      validation:
+        missing_tiles_directory: "Tiles-Verzeichnis nicht gefunden."
+        missing_index_document: "Index-Dokument nicht gefunden."
+        missing_preview: "Vorschau-Bild nicht gefunden."
+
+  editor:
+    files:
+      tabs:
+        "pageflow_panorama_packages": "360° Panoramen"
+      stages:
+        unpacking:
+          pending: "Noch nicht entpackt."
+          active: "Wird entpackt."
+          finished: "Erfolgreich entpackt."
+          failed: "Fehler beim entpacken."
+
   activerecord:
     attributes:
       pageflow/page:
+        panorama_source: "360°-Ansicht Anbieter"
         panorama_url: "360°-Ansicht URL"
+        panorama_package_id: "360°-Ansicht"
+    values:
+      pageflow/page:
+        panorama_source:
+          url: "Panogate, Palmsfilm"
+          package: "KRPano"
