@@ -11,4 +11,6 @@ Pageflow::Panorama.configure do |config|
     base_path: "/panogate",
     url: "http://www.panogate.de/"
   }]
+
+  config.packages_base_path = "/bucket"
 end

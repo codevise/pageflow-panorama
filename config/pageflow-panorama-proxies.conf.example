@@ -11,3 +11,7 @@ location /palmfilms/ {
   proxy_redirect http://www.palmfilms.com/ $scheme://$host/palmfilms/;
 }
 
+location /bucket/ {
+  proxy_pass http://BUCKET_NAME.s3-website-eu-west-1.amazonaws.com/;
+  proxy_redirect http://BUCKET_NAME.s3-website-eu-west-1.amazonaws.com/ $scheme://$host/bucket/;
+}
