@@ -1,3 +1,5 @@
+require 'pageflow/panorama/zip_entry_paperclip_io_adapter'
+
 module Pageflow
   module Panorama
     class Engine < Rails::Engine
