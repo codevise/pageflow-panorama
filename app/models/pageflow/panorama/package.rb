@@ -35,6 +35,10 @@ module Pageflow
         true
       end
 
+      def thumbnail_url(*args)
+        thumbnail.url(*args)
+      end
+
       def unpack_base_path
         attachment_on_s3.present? ? File.dirname(attachment_on_s3.path(:unpacked)) : nil
       end
