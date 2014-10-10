@@ -28,13 +28,7 @@ module Pageflow
       has_attached_file(:thumbnail, Pageflow.config.paperclip_s3_default_options
                           .merge(default_url: ':pageflow_placeholder',
                                  default_style: :thumbnail,
-                                 styles: {
-                                   :thumbnail  => ["100x100#", :JPG],
-                                   :navigation_thumbnail_small => ['85x47#', :JPG],
-                                   :navigation_thumbnail_large => ['170x95#', :JPG],
-                                   :thumbnail_overview_desktop => ['230x72#', :JPG],
-                                   :thumbnail_overview_mobile => ['200x112#', :JPG]
-                                 }))
+                                 styles: Pageflow.config.thumbnail_styles))
 
       # @override
       def keep_on_filesystem_after_upload_to_s3?
