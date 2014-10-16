@@ -11,7 +11,7 @@ pageflow.ConfigurationEditorView.register('panorama', {
 
     this.tab('files', function() {
       this.input('panorama_source', pageflow.SelectInputView, {
-        values: ['url', 'package'],
+        values: ['package', 'url'],
         ensureValueDefined: true
       });
       this.input('panorama_url', pageflow.ProxyUrlInputView, {

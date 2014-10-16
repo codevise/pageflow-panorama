@@ -10,7 +10,7 @@ de:
   editor:
     files:
       tabs:
-        "pageflow_panorama_packages": "360° Panoramen"
+        "pageflow_panorama_packages": "KRPanos"
       stages:
         unpacking:
           pending: "Noch nicht entpackt."
@@ -21,11 +21,11 @@ de:
   activerecord:
     attributes:
       pageflow/page:
-        panorama_source: "360°-Ansicht Anbieter"
-        panorama_url: "360°-Ansicht URL"
-        panorama_package_id: "360°-Ansicht"
+        panorama_source: "Panorama Quelle"
+        panorama_url: "Panorama URL"
+        panorama_package_id: "KRPano"
     values:
       pageflow/page:
         panorama_source:
-          url: "Panogate, Palmsfilm"
+          url: "Externes Panorama"
           package: "KRPano"
