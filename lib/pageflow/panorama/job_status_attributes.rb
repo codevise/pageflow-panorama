@@ -6,6 +6,8 @@ module Pageflow
       end
 
       def call(&block)
+        update_progress(0)
+
         with_error_message_handling do
           block.call do |percent|
             update_progress(percent)
@@ -16,7 +18,8 @@ module Pageflow
       private
 
       def update_progress(percent)
-        record.update(stage_attribute_name(:progress) => percent)
+        record.update(stage_attribute_name(:progress) => percent,
+                      stage_attribute_name(:error_message) => nil)
       end
 
       def with_error_message_handling
