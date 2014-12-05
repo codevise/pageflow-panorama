@@ -9,5 +9,9 @@ module Pageflow
     def self.configure(&block)
       block.call(config)
     end
+
+    def self.page_type
+      Panorama::PageType.new
+    end
   end
 end
