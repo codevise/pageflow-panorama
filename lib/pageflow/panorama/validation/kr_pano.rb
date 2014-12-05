@@ -12,7 +12,7 @@ module Pageflow
         private
 
         def find_tiles_directory!
-          find_file!('*.tiles/', :missing_tiles_directory)
+          find_file!('*.tiles/**/*', :missing_tiles_directory)
         end
 
         def find_index_document!
