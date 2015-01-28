@@ -53,3 +53,9 @@ If you support both palmfilms and panogate just copy
 in your app. This sets the `base_path` to correspond with the proxy configuration above.
 
 ### Restart the application server.
+
+## Contributing Locales
+
+Edit the translations directly on the
+[pageflow-panorama](http://www.localeapp.com/projects/public?search=tf/pageflow-panorama)
+locale project.
