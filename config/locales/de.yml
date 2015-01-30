@@ -1,31 +1,39 @@
 de:
-  pageflow:
-    panorama:
-      page_type_name: "360° Ansicht"
-      validation:
-        missing_tiles_directory: "Tiles-Verzeichnis nicht gefunden."
-        missing_index_document: "Index-Dokument nicht gefunden."
-        missing_preview: "Vorschau-Bild nicht gefunden."
-
-  editor:
-    files:
-      tabs:
-        "pageflow_panorama_packages": "KRPanos"
-      stages:
-        unpacking:
-          pending: "Noch nicht entpackt."
-          active: "Wird entpackt."
-          finished: "Erfolgreich entpackt."
-          failed: "Fehler beim entpacken."
-
   activerecord:
     attributes:
       pageflow/page:
-        panorama_source: "Panorama Quelle"
-        panorama_url: "Panorama URL"
-        panorama_package_id: "KRPano"
+        panorama_package_id: KRPano
+        panorama_source: Panorama Quelle
+        panorama_url: Panorama URL
     values:
       pageflow/page:
         panorama_source:
-          url: "Externes Panorama"
-          package: "KRPano"
+          package: KRPano
+          url: Externes Panorama
+  pageflow:
+    editor:
+      files:
+        stages:
+          unpacking:
+            active: Wird entpackt.
+            failed: Fehler beim entpacken.
+            finished: Erfolgreich entpackt.
+            pending: Noch nicht entpackt.
+        tabs:
+          pageflow_panorama_packages: KRPanos
+    panorama:
+      help_entries:
+        page_type:
+          menu_item: 360° Panorama
+          text: ! "# 360° Panorama\n\nBettet ein interaktives Panorama ein. Zwei verschiedene Quellen werden unterstützt:\n\n### Externes Panorama \n\nVon Drittanbieter erstellte Panoramen, die bereits über eine URL erreichbar sind können direkt eingebunden werden. Wähle dazu \"Externes Panorama\" als Panorama Quelle und füge die URL in das Textfeld ein.\n\n### Hochgeladene Zip Datei\n\nAlternativ können Panoramen mit dem Programm KRPano erstellt und unter \"Dateien verwalten > KRPano\" hochgeladen werden. Wähle danach \"KRPano\" als Panorama Quelle und wähle das gewünschte Panorama aus.\n\nTypische Anwendungsbeispiele: Beeindruckende Orte, Reiseberichte, Darstellung von Architektur"
+      page:
+        close: Schließen
+        close_title: 360°-Ansicht verlassen und Text einblenden
+        start: 360°-Ansicht starten
+      page_type_category_name: Interaktiv
+      page_type_description: Interaktive Panorama-Ansicht mit KRPano.
+      page_type_name: 360° Ansicht
+      validation:
+        missing_index_document: Index-Dokument nicht gefunden.
+        missing_preview: Vorschau-Bild nicht gefunden.
+        missing_tiles_directory: Tiles-Verzeichnis nicht gefunden.

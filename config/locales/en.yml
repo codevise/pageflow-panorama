@@ -1,0 +1,42 @@
+en:
+  activerecord:
+    attributes:
+      pageflow/page:
+        panorama_package_id: 
+        panorama_source: 
+        panorama_url: 
+    values:
+      pageflow/page:
+        panorama_source:
+          package: 
+          url: 
+  pageflow:
+    editor:
+      files:
+        stages:
+          unpacking:
+            active: 
+            failed: 
+            finished: 
+            pending: 
+        tabs:
+          pageflow_panorama_packages: 
+    panorama:
+      help_entries:
+        page_type:
+          menu_item: 360° Panorama
+          text: ! '# 360° Panorama
+
+
+            ...'
+      page:
+        close: 
+        close_title: 
+        start: 
+      page_type_category_name: Interactive
+      page_type_description: Interactive panorama using KRPano.
+      page_type_name: 
+      validation:
+        missing_index_document: 
+        missing_preview: 
+        missing_tiles_directory: 
