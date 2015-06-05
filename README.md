@@ -33,6 +33,9 @@ Include javascripts and stylesheets:
     # app/assets/stylesheets/pageflow/application.css.scss
     @import "pageflow/panorama";
 
+    # app/assets/stylesheets/pageflow/editor.css.scss
+    @import "pageflow/panorama/editor";
+
 Install and run migrations:
 
     $ rake pageflow_panorama:install:migrations
