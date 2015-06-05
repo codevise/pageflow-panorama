@@ -1,27 +1,28 @@
 # Pageflow Panorama
 
-Page type showing 360° panoramas in embedded iframes.
-Currently supported are panoramas by palmsfilm.com and panogate.com
-Accounts for these services are required.
+[![Gem Version](https://badge.fury.io/rb/pageflow-panorama.svg)](http://badge.fury.io/rb/pageflow-panorama)
+
+Page type showing 360° panoramas in embedded iframes. Currently
+supported are panoramas by palmsfilm.com, panogate.com and KRPano via
+upload in the editor.
 
 ## Installation
 
-### Add pageflow-panorama to your application's Gemfile:
+Add pageflow-panorama to your application's Gemfile:
 
     # Gemfile
     gem 'pageflow-panorama'
 
-bundle install
+and run `bundle install`.
 
-
-### Register the page type:
+Register the page type:
 
     # config/initializers/pageflow.rb
     Pageflow.configure do |config|
-      config.register_page_type(Pageflow::Panorama::PageType.new)
+      config.register_page_type(Pageflow::Panorama.page_type)
     end
 
-### Include javascripts and stylesheets:
+Include javascripts and stylesheets:
 
     # app/assets/javascripts/pageflow/application.js
     //= require pageflow/panorama
@@ -29,13 +30,17 @@ bundle install
     # app/assets/javascripts/pageflow/editor.js
     //= require pageflow/panorama/editor
 
-    # app/assets/stylesheets/pageflow/application.scss.css
+    # app/assets/stylesheets/pageflow/application.css.scss
     @import "pageflow/panorama";
 
+Install and run migrations:
 
-### Create Proxies for the panorama providers:
+    $ rake pageflow_panorama:install:migrations
+    $ rake db:migrate
 
-To circumvent the same-origin policy a proxy from the domain that
+### Create Proxies for the Panorama Providers:
+
+To circumvent the same-origin policy, a proxy from the domain that
 serves pageflow to the domain of the panorma-providers has to be
 configured.
 
@@ -46,13 +51,23 @@ and include it in you pageflow config file:
 
      include /etc/nginx/pageflow-panorama-proxies.conf
 
-### Configure the supported panorama providers
+### Configure the Supported Panorama Providers
 
 If you support both palmfilms and panogate just copy
 `config/pageflow_panorama.rb.example` to `config/initializers/pageflow_panorama.rb`
 in your app. This sets the `base_path` to correspond with the proxy configuration above.
 
-### Restart the application server.
+Restart the application server.
+
+## Troubleshooting
+
+If you run into problems while installing the page type, please also
+refer to the
+[Troubleshooting](https://github.com/codevise/pageflow/wiki/Troubleshooting)
+wiki page in the
+[Pageflow repository](https://github.com/codevise/pageflow). If that
+doesn't help, consider
+[filing an issue](https://github.com/codevise/pageflow-panorama/issues).
 
 ## Contributing Locales
 
