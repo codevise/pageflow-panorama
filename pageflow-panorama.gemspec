@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "pageflow-panorama"
-  spec.version       = "0.1.0-alpha"
+  spec.version       = "0.1.0"
   spec.authors       = ["Codevise Solutions"]
   spec.email         = ["info@codevise.de"]
   spec.summary       = "Pagetype for iframe embedded 360° panoramas"
