@@ -10,23 +10,31 @@ pageflow.ConfigurationEditorView.register('panorama', {
     });
 
     this.tab('files', function() {
-      this.input('panorama_source', pageflow.SelectInputView, {
-        values: ['package', 'url'],
-        ensureValueDefined: true
-      });
-      this.input('panorama_url', pageflow.ProxyUrlInputView, {
-        required: true,
-        proxies: providers,
-        displayPropertyName: 'display_panorama_url',
-        visibleBinding: 'panorama_source',
-        visibleBindingValue: 'url'
-      });
-      this.input('panorama_package_id', pageflow.FileInputView, {
-        collection: 'pageflow_panorama_packages',
-        imagePositioning: false,
-        visibleBinding: 'panorama_source',
-        visibleBindingValue: 'package'
-      });
+      if (providers.length) {
+        this.input('panorama_source', pageflow.SelectInputView, {
+          values: ['package', 'url'],
+          ensureValueDefined: true
+        });
+        this.input('panorama_url', pageflow.ProxyUrlInputView, {
+          required: true,
+          proxies: providers,
+          displayPropertyName: 'display_panorama_url',
+          visibleBinding: 'panorama_source',
+          visibleBindingValue: 'url'
+        });
+        this.input('panorama_package_id', pageflow.FileInputView, {
+          collection: 'pageflow_panorama_packages',
+          imagePositioning: false,
+          visibleBinding: 'panorama_source',
+          visibleBindingValue: 'package'
+        });
+      }
+      else {
+        this.input('panorama_package_id', pageflow.FileInputView, {
+          collection: 'pageflow_panorama_packages',
+          imagePositioning: false
+        });
+      }
 
       this.input('thumbnail_image_id', pageflow.FileInputView, {
         collection: pageflow.imageFiles,
