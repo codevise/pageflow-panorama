@@ -2,25 +2,25 @@ en:
   activerecord:
     attributes:
       pageflow/page:
-        panorama_package_id: 
-        panorama_source: 
-        panorama_url: 
+        panorama_package_id: KRPano
+        panorama_source: Panorama Source
+        panorama_url: Panorama URL
     values:
       pageflow/page:
         panorama_source:
-          package: 
-          url: 
+          package: KRPano
+          url: External Panorama
   pageflow:
     editor:
       files:
         stages:
           unpacking:
-            active: 
-            failed: 
-            finished: 
-            pending: 
+            active: Unpacking.
+            failed: Error while unpacking.
+            finished: Successfully unpacked.
+            pending: Not yet unpacked.
         tabs:
-          pageflow_panorama_packages: 
+          pageflow_panorama_packages: KRPanos
     panorama:
       help_entries:
         page_type:
@@ -28,15 +28,30 @@ en:
           text: ! '# 360° Panorama
 
 
-            ...'
+            Embeds an interactive panorama.
+
+
+            ### External Panorama
+
+
+            Panoramas that are already available on the web can be embedded via an URL. Choose "External Panorama" as Panorama Source and paste the URL.
+
+
+            ### Uploaded Zip File
+
+
+            Alternatively, panoramas can be created using the program KRPano. Visit "Manage Files > KRPano" and upload the resulting zip file. Now choose "KRPano" as Panorama Source and select an uploaded panorama.
+
+
+            Typical use cases: Impressing places, travel reports, architecture'
       page:
-        close: 
-        close_title: 
-        start: 
+        close: Close
+        close_title: Close 360° panorama and display text
+        start: Start 360° panorama
       page_type_category_name: Interactive
       page_type_description: Interactive panorama using KRPano.
-      page_type_name: 
+      page_type_name: 360° Panorama
       validation:
-        missing_index_document: 
-        missing_preview: 
-        missing_tiles_directory: 
+        missing_index_document: Index document not found.
+        missing_preview: Preview image not found.
+        missing_tiles_directory: Tiles directory not found.
