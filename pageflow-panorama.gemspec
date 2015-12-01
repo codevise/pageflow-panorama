@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "pageflow"
   spec.add_runtime_dependency "rubyzip", "~> 1.1"
+  spec.add_runtime_dependency 'pageflow-public-i18n', '~> 1.0'
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
