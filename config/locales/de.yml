@@ -25,11 +25,7 @@ de:
       help_entries:
         page_type:
           menu_item: 360° Panorama
-          text: ! "# 360° Panorama\n\nBettet ein interaktives Panorama ein. Zwei verschiedene Quellen werden unterstützt:\n\n### Externes Panorama \n\nVon Drittanbieter erstellte Panoramen, die bereits über eine URL erreichbar sind können direkt eingebunden werden. Wähle dazu \"Externes Panorama\" als Panorama Quelle und füge die URL in das Textfeld ein.\n\n### Hochgeladene Zip Datei\n\nAlternativ können Panoramen mit dem Programm KRPano erstellt und unter \"Dateien verwalten > KRPano\" hochgeladen werden. Wähle danach \"KRPano\" als Panorama Quelle und wähle das gewünschte Panorama aus.\n\nTypische Anwendungsbeispiele: Beeindruckende Orte, Reiseberichte, Darstellung von Architektur"
-      page:
-        close: Schließen
-        close_title: 360°-Ansicht verlassen und Text einblenden
-        start: 360°-Ansicht starten
+          text: ! "# 360° Panorama\n\n*Bettet ein interaktives Panorama ein*\n    \nZwei verschiedene Quellen werden unterstützt:\n    \n### Externes Panorama \n\nVon Drittanbieter erstellte Panoramen, die bereits über eine URL erreichbar sind können direkt eingebunden werden. Wähle dazu \"Externes Panorama\" als Panorama Quelle und füge die URL in das Textfeld ein.\n\n### Hochgeladene Zip Datei\n\nAlternativ können Panoramen mit dem Programm KRPano erstellt und unter \"Dateien verwalten > KRPano\" hochgeladen werden. Wähle danach \"KRPano\" als Panorama Quelle und wähle das gewünschte Panorama aus.\n\nTypische Anwendungsbeispiele: Beeindruckende Orte, Reiseberichte, Darstellung von Architektur"
       page_type_category_name: Interaktiv
       page_type_description: Interaktive Panorama-Ansicht mit KRPano.
       page_type_name: 360° Ansicht

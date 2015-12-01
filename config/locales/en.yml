@@ -25,29 +25,7 @@ en:
       help_entries:
         page_type:
           menu_item: 360° Panorama
-          text: ! '# 360° Panorama
-
-
-            Embeds an interactive panorama.
-
-
-            ### External Panorama
-
-
-            Panoramas that are already available on the web can be embedded via an URL. Choose "External Panorama" as Panorama Source and paste the URL.
-
-
-            ### Uploaded Zip File
-
-
-            Alternatively, panoramas can be created using the program KRPano. Visit "Manage Files > KRPano" and upload the resulting zip file. Now choose "KRPano" as Panorama Source and select an uploaded panorama.
-
-
-            Typical use cases: Impressing places, travel reports, architecture'
-      page:
-        close: Close
-        close_title: Close 360° panorama and display text
-        start: Start 360° panorama
+          text: ! "# 360° Panorama\n\n*Embeds an interactive panorama*\n    \n### External Panorama\n\nPanoramas that are already available on the web can be embedded via an URL. Choose \"External Panorama\" as Panorama Source and paste the URL.\n\n### Uploaded Zip File\n\nAlternatively, panoramas can be created using the program KRPano. Visit \"Manage Files > KRPano\" and upload the resulting zip file. Now choose \"KRPano\" as Panorama Source and select an uploaded panorama.\n\nTypical use cases: Impressing places, travel reports, architecture"
       page_type_category_name: Interactive
       page_type_description: Interactive panorama using KRPano.
       page_type_name: 360° Panorama
