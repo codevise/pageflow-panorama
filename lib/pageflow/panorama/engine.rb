@@ -1,3 +1,4 @@
+require 'pageflow-public-i18n'
 require 'pageflow/panorama/zip_entry_paperclip_io_adapter'
 
 module Pageflow
