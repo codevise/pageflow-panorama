@@ -3,12 +3,14 @@ require 'zip'
 module Pageflow
   module Panorama
     class UnpackToS3
-      attr_reader :archive, :destination_bucket, :destination_base_path
+      attr_reader :archive, :destination_bucket, :destination_base_path,
+                  :content_type_mapping
 
       def initialize(options)
         @archive = options.fetch(:archive)
         @destination_bucket = options.fetch(:destination_bucket)
         @destination_base_path = options.fetch(:destination_base_path)
+        @content_type_mapping = options.fetch(:content_type_mapping, {})
       end
 
       def upload(&progress)
@@ -25,7 +27,8 @@ module Pageflow
         with_retry do
           s3_object(entry.name).write(entry.get_input_stream,
                                       acl: :public_read,
-                                      content_length: entry.size)
+                                      content_length: entry.size,
+                                      content_type: content_type_for(entry.name))
         end
       end
 
@@ -35,6 +38,10 @@ module Pageflow
 
       def destination_path(file_name)
         File.join(destination_base_path, file_name)
+      end
+
+      def content_type_for(file_name)
+        content_type_mapping[File.extname(file_name).delete('.')]
       end
 
       def with_retry(&block)

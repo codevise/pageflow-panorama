@@ -56,7 +56,8 @@ module Pageflow
       def unpacker
         UnpackToS3.new(archive: archive,
                        destination_bucket: attachment_on_s3.s3_bucket,
-                       destination_base_path: unpack_base_path)
+                       destination_base_path: unpack_base_path,
+                       content_type_mapping: Panorama.config.content_type_mapping)
       end
     end
   end
