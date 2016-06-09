@@ -1,8 +1,10 @@
 # CHANGELOG
 
-### Changes on `master`
+### Version 0.2.0
 
-[Compare changes](https://github.com/codevise/pageflow-panorama/compare/v0.1.0...master)
+2016-06-09
+
+[Compare changes](https://github.com/codevise/pageflow-panorama/compare/v0.1.0...v0.2.0)
 
 - Bug fix: Assign content types when unpacking to S3 to ensure display
   in all browsers
