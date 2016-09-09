@@ -1,5 +1,11 @@
 # CHANGELOG
 
+### Changes on `master`
+
+[Compare changes](https://github.com/codevise/pageflow-panorama/compare/v0.3.0...master)
+
+None so far.
+
 ### Version 0.3.0
 
 2016-09-09
