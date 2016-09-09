@@ -1,5 +1,5 @@
 module Pageflow
   module Panorama
-    VERSION = '0.3.0.dev'.freeze
+    VERSION = '0.3.0'.freeze
   end
 end

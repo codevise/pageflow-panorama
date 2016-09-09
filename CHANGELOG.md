@@ -1,10 +1,13 @@
 # CHANGELOG
 
-### Changes on `master`
+### Version 0.3.0
 
-[Compare changes](https://github.com/codevise/pageflow-panorama/compare/v0.2.0...master)
+2016-09-09
 
-None so far.
+[Compare changes](https://github.com/codevise/pageflow-panorama/compare/v0.2.0...v0.3.0)
+
+- Add support for slim player control theme variant
+  ([#8](https://github.com/codevise/pageflow-panorama/pull/8))
 
 ### Version 0.2.0
 

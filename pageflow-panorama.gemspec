@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "pageflow", "~> 0.11.pre"
+  spec.add_runtime_dependency "pageflow", "~> 0.11"
   spec.add_runtime_dependency "rubyzip", "~> 1.1"
   spec.add_runtime_dependency 'pageflow-public-i18n', '~> 1.0'
 
@@ -27,5 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "mysql2"
 
   # Semantic versioning rake tasks
-  spec.add_development_dependency 'semmy', '~> 0.2'
+  spec.add_development_dependency 'semmy', '~> 0.3.0'
 end
