@@ -12,7 +12,8 @@ module Pageflow
       def file_types
         [
           FileType.new(model: Package,
-                       editor_partial: 'pageflow/panorama/editor/packages/package')
+                       editor_partial: 'pageflow/panorama/editor/packages/package',
+                       top_level_type: true)
         ]
       end
 
