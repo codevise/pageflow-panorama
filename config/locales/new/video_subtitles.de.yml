@@ -1,0 +1,6 @@
+de:
+  activerecord:
+    models:
+      pageflow/panorama/package:
+        one: Panorama-Archivdatei
+        other: Panorama-Archivdateien
