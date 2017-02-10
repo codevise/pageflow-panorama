@@ -24,11 +24,11 @@ en:
     panorama:
       help_entries:
         page_type:
-          menu_item: 360° Panorama
-          text: ! "# 360° Panorama\n\n*Embeds an interactive panorama*\n    \n### External Panorama\n\nPanoramas that are already available on the web can be embedded via an URL. Choose \"External Panorama\" as Panorama Source and paste the URL.\n\n### Uploaded Zip File\n\nAlternatively, panoramas can be created using the program KRPano. Visit \"Manage Files > KRPano\" and upload the resulting zip file. Now choose \"KRPano\" as Panorama Source and select an uploaded panorama.\n\nTypical use cases: Impressing places, travel reports, architecture"
+          menu_item: 360° Image
+          text: "# 360° Image\n\n*Embeds an interactive panorama*\n    \n### External Panorama\n\nPanoramas that are already available on the web can be embedded via an URL. Choose \"External Panorama\" as Panorama Source and paste the URL.\n\n### Uploaded Zip File\n\nAlternatively, panoramas can be created using the program KRPano. Visit \"Manage Files > KRPano\" and upload the resulting zip file. Now choose \"KRPano\" as Panorama Source and select an uploaded panorama.\n\nTypical use cases: Impressing places, travel reports, architecture"
       page_type_category_name: Interactive
       page_type_description: Interactive panorama using KRPano.
-      page_type_name: 360° Panorama
+      page_type_name: 360° Image
       validation:
         missing_index_document: Index document not found.
         missing_preview: Preview image not found.
