@@ -20,7 +20,7 @@ module Pageflow
         end
 
         def find_thumbnail!
-          find_file!('**/mobile_f.jpg', :missing_preview)
+          find_file!('**/*_f.jpg', :missing_preview)
         end
 
         def find_file!(glob, message_i18n_key)
