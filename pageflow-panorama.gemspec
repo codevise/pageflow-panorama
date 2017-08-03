@@ -17,12 +17,14 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "pageflow", [">= 0.11", "< 13"]
+  spec.add_runtime_dependency 'state_machine_job', ['>= 0.2', '< 2']
   spec.add_runtime_dependency "rubyzip", "~> 1.1"
   spec.add_runtime_dependency 'pageflow-public-i18n', '~> 1.0'
 
+  spec.add_development_dependency 'pageflow-support', '>= 0.11.4'
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec-rails", "~> 2.0"
+  spec.add_development_dependency "rspec-rails", "~> 3.0"
   spec.add_development_dependency 'factory_girl_rails'
   spec.add_development_dependency "mysql2"
 
