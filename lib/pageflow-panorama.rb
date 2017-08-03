@@ -13,5 +13,13 @@ module Pageflow
     def self.page_type
       Panorama::PageType.new
     end
+
+    def self.bucket_factory
+      @bucket_factory ||= Panorama::S3Bucket::Factory.new
+    end
+
+    def self.bucket_factory=(bucket_factory)
+      @bucket_factory = bucket_factory
+    end
   end
 end
