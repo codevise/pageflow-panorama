@@ -1,6 +1,7 @@
 # Pageflow Panorama
 
 [![Gem Version](https://badge.fury.io/rb/pageflow-panorama.svg)](http://badge.fury.io/rb/pageflow-panorama)
+[![Build Status](https://travis-ci.org/codevise/pageflow-panorama.svg?branch=master)](https://travis-ci.org/codevise/pageflow-panorama)
 
 Page type showing 360° panoramas in embedded iframes. Currently
 supported are panoramas by palmsfilm.com, panogate.com and KRPano via
