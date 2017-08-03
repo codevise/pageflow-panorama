@@ -31,5 +31,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "mysql2"
 
   # Semantic versioning rake tasks
-  spec.add_development_dependency 'semmy', '~> 0.3.0'
+  spec.add_development_dependency 'semmy', '~> 1.0'
 end
