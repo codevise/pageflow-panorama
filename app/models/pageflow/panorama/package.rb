@@ -30,11 +30,6 @@ module Pageflow
                                  default_style: :thumbnail,
                                  styles: Pageflow.config.thumbnail_styles))
 
-      # @override
-      def keep_on_filesystem_after_upload_to_s3?
-        true
-      end
-
       def thumbnail_url(*args)
         thumbnail.url(*args)
       end
@@ -47,10 +42,6 @@ module Pageflow
 
       def unpack_base_path
         attachment_on_s3.present? ? File.dirname(attachment_on_s3.path(:unpacked)) : nil
-      end
-
-      def archive
-        @archive ||= Zip::File.open(attachment_on_filesystem.path)
       end
     end
   end
