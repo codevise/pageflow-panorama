@@ -1,3 +1,5 @@
+require 'pageflow/panorama/validation'
+
 module Pageflow
   module Panorama
     class UnpackPackageJob
@@ -5,21 +7,33 @@ module Pageflow
 
       extend StateMachineJob
 
-      def self.perform_with_result(package, options)
+      def self.perform_with_result(package, _options)
         JobStatusAttributes.handle(package, stage: :unpacking) do |&progress|
-          parse(package)
+          archive = package.archive
 
-          package.unpacker.upload(&progress)
+          parse(package, archive)
+          unpack_to_s3(package, archive, &progress)
+
           package.attachment_on_filesystem.destroy
         end
 
         :ok
       end
 
-      private
+      private_class_method
 
-      def self.parse(package)
-        result = Validation.parse(package.archive)
+      def self.unpack_to_s3(package, archive, &progress)
+        bucket = Panorama.bucket_factory.from_attachment(package.attachment_on_s3)
+
+        UnpackToS3.new(archive: archive,
+                       destination_bucket: bucket,
+                       destination_base_path: package.unpack_base_path,
+                       content_type_mapping: Panorama.config.content_type_mapping,
+                       &progress).upload
+      end
+
+      def self.parse(package, archive)
+        result = Validation.parse(archive)
 
         package.index_document = result.index_document
         package.thumbnail = package.archive.find_entry(result.thumbnail)
