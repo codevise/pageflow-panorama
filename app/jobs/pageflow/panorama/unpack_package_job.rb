@@ -25,11 +25,12 @@ module Pageflow
       def self.unpack_to_s3(package, archive, &progress)
         bucket = Panorama.bucket_factory.from_attachment(package.attachment_on_s3)
 
-        UnpackToS3.new(archive: archive,
-                       destination_bucket: bucket,
-                       destination_base_path: package.unpack_base_path,
-                       content_type_mapping: Panorama.config.content_type_mapping,
-                       &progress).upload
+        UnpackToS3
+          .new(archive: archive,
+               destination_bucket: bucket,
+               destination_base_path: package.unpack_base_path,
+               content_type_mapping: Panorama.config.content_type_mapping)
+          .upload(&progress)
       end
 
       def self.parse(package, archive)

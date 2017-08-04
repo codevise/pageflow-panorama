@@ -29,6 +29,16 @@ module Pageflow
             .with(hash_including(name: package.index_document_path))
         end
 
+        it 'updates unpacking_progress' do
+          zip_file = File.open(Engine.root.join('spec', 'fixtures', 'krpano.zip'))
+          package = Package.create!(attachment: zip_file)
+
+          package.publish!
+          package.reload
+
+          expect(package.unpacking_progress).to eq(100)
+        end
+
         class TestBucketFactory
           def initialize(bucket)
             @bucket = bucket
