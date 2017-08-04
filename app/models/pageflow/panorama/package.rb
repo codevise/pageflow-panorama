@@ -18,6 +18,10 @@ module Pageflow
           transition 'unpacking_failed' => 'unpacking'
         end
 
+        before_transition on: :retry do |package|
+          JobStatusAttributes.reset(package, stage: :unpacking)
+        end
+
         job UnpackPackageJob do
           on_enter 'unpacking'
           result :ok, state: 'unpacked'

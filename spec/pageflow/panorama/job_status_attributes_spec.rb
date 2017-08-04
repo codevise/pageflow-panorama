@@ -32,6 +32,18 @@ module Pageflow
           expect(record.unpacking_error_message).to eq('i18n_key')
         end
       end
+
+      describe '#reset' do
+        it 'resets progress and error message attrbute' do
+          record = Package.create!(unpacking_progress: 20,
+                                   unpacking_error_message: 'fail')
+
+          JobStatusAttributes.reset(record, stage: :unpacking)
+
+          expect(record.unpacking_progress).to eq(0)
+          expect(record.unpacking_error_message).to eq(nil)
+        end
+      end
     end
   end
 end

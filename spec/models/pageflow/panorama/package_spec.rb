@@ -2,8 +2,8 @@ require 'spec_helper'
 
 module Pageflow
   module Panorama
-    describe Package, inline_resque: true do
-      describe '#process' do
+    describe Package do
+      describe '#process', inline_resque: true do
         it 'parses thumbnail and index document' do
           zip_file = File.open(Engine.root.join('spec', 'fixtures', 'krpano.zip'))
           package = Package.create!(attachment: zip_file)
@@ -47,6 +47,21 @@ module Pageflow
           def from_attachment(_attachment)
             @bucket
           end
+        end
+      end
+
+      describe '#retry', stub_resque: true do
+        it 'resets unpacking progress and error_message' do
+          zip_file = File.open(Engine.root.join('spec', 'fixtures', 'krpano.zip'))
+          package = Package.create!(attachment: zip_file,
+                                    state: 'unpacking_failed',
+                                    unpacking_progress: 50,
+                                    unpacking_error_message: 'failed')
+
+          package.retry!
+
+          expect(package.unpacking_progress).to eq(0)
+          expect(package.unpacking_error_message).to eq(nil)
         end
       end
     end
