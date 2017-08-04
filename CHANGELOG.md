@@ -1,6 +1,6 @@
 # CHANGELOG
 
-### Changes on `master`
+### Unreleased Changes
 
 [Compare changes](https://github.com/codevise/pageflow-panorama/compare/v0.3.0...master)
 
