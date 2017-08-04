@@ -9,15 +9,15 @@ module Pageflow
 
       def self.perform_with_result(package, _options)
         JobStatusAttributes.handle(package, stage: :unpacking) do |&progress|
-          archive = package.archive
-
-          parse(package, archive)
-          unpack_to_s3(package, archive, &progress)
-
-          package.attachment_on_filesystem.destroy
+          Archive.for(package) do |archive|
+            parse(package, archive)
+            unpack_to_s3(package, archive, &progress)
+          end
         end
 
         :ok
+      rescue Panorama::Validation::Error
+        :error
       end
 
       private_class_method
@@ -36,7 +36,7 @@ module Pageflow
         result = Validation.parse(archive)
 
         package.index_document = result.index_document
-        package.thumbnail = package.archive.find_entry(result.thumbnail)
+        package.thumbnail = archive.find_entry(result.thumbnail)
       end
     end
   end
