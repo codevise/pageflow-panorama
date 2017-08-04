@@ -5,6 +5,10 @@ module Pageflow
         new(record, options[:stage]).call(&block)
       end
 
+      def self.reset(record, options = {})
+        new(record, options[:stage]).reset
+      end
+
       def call(&block)
         update_progress(0)
 
@@ -13,6 +17,10 @@ module Pageflow
             update_progress(percent)
           end
         end
+      end
+
+      def reset
+        update_progress(0)
       end
 
       private

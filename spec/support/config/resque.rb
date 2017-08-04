@@ -6,4 +6,8 @@ RSpec.configure do |config|
   config.after(:each, inline_resque: true) do
     Resque.inline = false
   end
+
+  config.before(:each, stub_resque: true) do
+    allow(Resque).to receive(:enqueue)
+  end
 end
