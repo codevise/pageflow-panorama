@@ -24,9 +24,13 @@ module Pageflow
         end
 
         def find_file!(glob, message_i18n_key)
-          entries.map(&:name).find do |name|
+          ignore_dot_files(entries.map(&:name)).find do |name|
             File.fnmatch(glob, name)
           end || raise(Error.new("pageflow.panorama.validation.#{message_i18n_key}"))
+        end
+
+        def ignore_dot_files(names)
+          names.reject { |name| File.basename(name).start_with?('.') }
         end
       end
     end

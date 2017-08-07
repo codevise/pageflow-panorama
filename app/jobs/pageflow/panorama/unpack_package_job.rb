@@ -37,7 +37,18 @@ module Pageflow
         result = Validation.parse(archive)
 
         package.index_document = result.index_document
-        package.thumbnail = archive.find_entry(result.thumbnail)
+        process_thumbnail(package, archive.find_entry(result.thumbnail))
+      end
+
+      def self.process_thumbnail(package, thumbnail_file)
+        package.thumbnail = thumbnail_file
+        package.valid?
+
+        if package.errors.include?(:thumbnail)
+          package.thumbnail = nil
+          raise(Panorama::Validation::Error
+                .new('pageflow.panorama.validation.unprocessable_thumbnail'))
+        end
       end
     end
   end
