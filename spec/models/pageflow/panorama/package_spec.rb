@@ -39,6 +39,28 @@ module Pageflow
           expect(package.unpacking_progress).to eq(100)
         end
 
+        it 'transitions to failed state if validation fails' do
+          zip_file = File.open(Engine.root.join('spec', 'fixtures', 'some.txt.zip'))
+          package = Package.create!(attachment: zip_file)
+
+          package.publish!
+          package.reload
+
+          expect(package.state).to eq('unpacking_failed')
+        end
+
+        it 'transitions to failed state if thumbnail is unprocessable' do
+          zip_file = File.open(Engine.root.join('spec',
+                                                'fixtures',
+                                                'krpano_with_unprocessable_thumbnail.zip'))
+          package = Package.create!(attachment: zip_file)
+
+          package.publish!
+          package.reload
+
+          expect(package.state).to eq('unpacking_failed')
+        end
+
         class TestBucketFactory
           def initialize(bucket)
             @bucket = bucket
