@@ -5,6 +5,10 @@ de:
         panorama_package_id: KRPano
         panorama_source: Panorama Quelle
         panorama_url: Panorama URL
+    models:
+      pageflow/panorama/package:
+        one: Panorama Package File
+        other: Panorama Package Files
     values:
       pageflow/page:
         panorama_source:
@@ -33,3 +37,4 @@ de:
         missing_index_document: Index-Dokument nicht gefunden.
         missing_preview: Vorschau-Bild nicht gefunden.
         missing_tiles_directory: Tiles-Verzeichnis nicht gefunden.
+        unprocessable_thumbnail: Thumbnail konnte nicht verarbeitet werden.
