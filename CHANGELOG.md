@@ -1,5 +1,14 @@
 # CHANGELOG
 
+### Version 1.0.1
+
+2017-08-10
+
+[Compare changes](https://github.com/codevise/pageflow-panorama/compare/v1.0.0...v1.0.1)
+
+- Rename .css.scss files to just .css and update readme
+  ([#20](https://github.com/codevise/pageflow-panorama/pull/20))
+
 ### Version 1.0.0
 
 2017-08-10
