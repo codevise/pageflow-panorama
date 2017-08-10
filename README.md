@@ -20,7 +20,7 @@ Register the page type:
 
     # config/initializers/pageflow.rb
     Pageflow.configure do |config|
-      config.register_page_type(Pageflow::Panorama.page_type)
+      config.page_types.register(Pageflow::Panorama.page_type)
     end
 
 Include javascripts and stylesheets:
@@ -31,13 +31,13 @@ Include javascripts and stylesheets:
     # app/assets/javascripts/pageflow/editor.js
     //= require pageflow/panorama/editor
 
-    # app/assets/stylesheets/pageflow/application.css.scss
+    # app/assets/stylesheets/pageflow/application.scss
     @import "pageflow/panorama";
 
-    # app/assets/stylesheets/pageflow/editor.css.scss
+    # app/assets/stylesheets/pageflow/editor.scss
     @import "pageflow/panorama/editor";
 
-    # app/assets/stylesheets/pageflow/themes/default.css.scss
+    # app/assets/stylesheets/pageflow/themes/default.scss
     @import "pageflow/panorama/themes/default";
 
 Install and run migrations:
