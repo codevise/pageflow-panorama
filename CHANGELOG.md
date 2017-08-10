@@ -1,42 +1,34 @@
 # CHANGELOG
 
-### Unreleased Changes
+### Version 1.0.0
 
-[Compare changes](https://github.com/codevise/pageflow-panorama/compare/v0.3.0...master)
+2017-08-10
 
-None so far.
+[Compare changes](https://github.com/codevise/pageflow-panorama/compare/0-3-stable...v1.0.0)
 
-### Version 0.3.0
+- Improve thumbnail processing
+  ([#19](https://github.com/codevise/pageflow-panorama/pull/19))
+- Load subdirectories of `config/locales`.
+  ([#18](https://github.com/codevise/pageflow-panorama/pull/18))
+- Fix unpacking progress and improve retry
+  ([#17](https://github.com/codevise/pageflow-panorama/pull/17))
+- Prevent leaving invalid packages on the file system
+  ([#16](https://github.com/codevise/pageflow-panorama/pull/16))
+- Update semmy
+  ([#15](https://github.com/codevise/pageflow-panorama/pull/15))
+- Setup travis
+  ([#14](https://github.com/codevise/pageflow-panorama/pull/14))
+- Migration added index for video files instead of packages
+  ([#13](https://github.com/codevise/pageflow-panorama/pull/13))
+- Allow different thumbnail names
+  ([#12](https://github.com/codevise/pageflow-panorama/pull/12))
+- Support pageflow 12
+  ([#11](https://github.com/codevise/pageflow-panorama/pull/11))
+- Add css class to background for slim controls shadow
+  ([#10](https://github.com/codevise/pageflow-panorama/pull/10))
+- Add nested files support
+  ([#9](https://github.com/codevise/pageflow-panorama/pull/9))
 
-2016-09-09
-
-[Compare changes](https://github.com/codevise/pageflow-panorama/compare/v0.2.0...v0.3.0)
-
-- Add support for slim player control theme variant
-  ([#8](https://github.com/codevise/pageflow-panorama/pull/8))
-
-### Version 0.2.0
-
-2016-06-09
-
-[Compare changes](https://github.com/codevise/pageflow-panorama/compare/v0.1.0...v0.2.0)
-
-- Bug fix: Assign content types when unpacking to S3 to ensure display
-  in all browsers
-  ([#7](https://github.com/codevise/pageflow-panorama/pull/7))
-- Do not declare bin stubs as executables
-  ([#6](https://github.com/codevise/pageflow-panorama/pull/6))
-- Use configurable page type pictograms
-  ([#5](https://github.com/codevise/pageflow-panorama/pull/5))
-- Add pageflow-public-i18n to gemspec
-  ([#4](https://github.com/codevise/pageflow-panorama/pull/4))
-- Extract publicly visible i18n strings from locale
-  ([#3](https://github.com/codevise/pageflow-panorama/pull/3))
-- Add .idea entry to .gitignore
-  ([#2](https://github.com/codevise/pageflow-panorama/pull/2))
-
-### Version 0.1.0
-
-2015-06-05
-
-Initial release.
+See
+[0-3-stable branch](https://github.com/codevise/pageflow-panorama/blob/0-3-stable/CHANGELOG.md)
+for previous changes.
