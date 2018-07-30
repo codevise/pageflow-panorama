@@ -3,7 +3,7 @@ require 'spec_helper'
 module Pageflow
   module Panorama
     describe Package do
-      describe '#process', inline_resque: true do
+      describe '#process', perform_jobs: true do
         it 'parses thumbnail and index document' do
           zip_file = File.open(Engine.root.join('spec', 'fixtures', 'krpano.zip'))
           package = Package.create!(attachment: zip_file)
@@ -72,7 +72,7 @@ module Pageflow
         end
       end
 
-      describe '#retry', stub_resque: true do
+      describe '#retry' do
         it 'resets unpacking progress and error_message' do
           zip_file = File.open(Engine.root.join('spec', 'fixtures', 'krpano.zip'))
           package = Package.create!(attachment: zip_file,
