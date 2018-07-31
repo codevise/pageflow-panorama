@@ -2,12 +2,12 @@ require 'pageflow/panorama/validation'
 
 module Pageflow
   module Panorama
-    class UnpackPackageJob
-      @queue = :slow
+    class UnpackPackageJob < ActiveJob::Base
+      queue_as :slow
 
-      extend StateMachineJob
+      include StateMachineJob
 
-      def self.perform_with_result(package, _options)
+      def perform_with_result(package, _options)
         JobStatusAttributes.handle(package, stage: :unpacking) do |&progress|
           Archive.for(package) do |archive|
             parse(package, archive)
@@ -22,7 +22,7 @@ module Pageflow
 
       private_class_method
 
-      def self.unpack_to_s3(package, archive, &progress)
+      def unpack_to_s3(package, archive, &progress)
         bucket = Panorama.bucket_factory.from_attachment(package.attachment_on_s3)
 
         UnpackToS3
@@ -33,14 +33,14 @@ module Pageflow
           .upload(&progress)
       end
 
-      def self.parse(package, archive)
+      def parse(package, archive)
         result = Validation.parse(archive)
 
         package.index_document = result.index_document
         process_thumbnail(package, archive.find_entry(result.thumbnail))
       end
 
-      def self.process_thumbnail(package, thumbnail_file)
+      def process_thumbnail(package, thumbnail_file)
         package.thumbnail = thumbnail_file
         package.valid?
 

@@ -18,17 +18,15 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '~> 2.1'
 
-  spec.add_runtime_dependency 'pageflow', ['>= 0.11', '< 13']
-  spec.add_runtime_dependency 'state_machine_job', ['>= 0.2', '< 2']
+  spec.add_runtime_dependency 'pageflow', '~> 13.x'
   spec.add_runtime_dependency 'rubyzip', '~> 1.1'
   spec.add_runtime_dependency 'pageflow-public-i18n', '~> 1.0'
 
-  spec.add_development_dependency 'pageflow-support', ['>= 0.11.4', '< 13']
+  spec.add_development_dependency 'pageflow-support', '~> 13.x'
   spec.add_development_dependency 'bundler', '~> 1.0'
   spec.add_development_dependency 'rake', '~> 12.0'
-  spec.add_development_dependency 'rspec-rails', '~> 3.0'
-  spec.add_development_dependency 'factory_girl_rails', '~> 4.5'
-  spec.add_development_dependency 'mysql2', '~> 0.3.21'
+  spec.add_development_dependency 'rspec-rails', '~> 3.7'
+  spec.add_development_dependency 'factory_bot_rails', '~> 4.8'
 
   # Semantic versioning rake tasks
   spec.add_development_dependency 'semmy', '~> 1.0'

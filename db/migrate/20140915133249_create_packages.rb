@@ -1,4 +1,4 @@
-class CreatePackages < ActiveRecord::Migration
+class CreatePackages < ActiveRecord::Migration[4.2]
   def change
     create_table :pageflow_panorama_packages do |t|
       Pageflow::HostedFile.columns(t)
