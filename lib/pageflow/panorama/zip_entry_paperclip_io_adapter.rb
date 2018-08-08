@@ -9,7 +9,7 @@ module Pageflow
         attr_writer(:original_filename)
       end
 
-      def initialize(entry)
+      def initialize(entry, options = {})
         @entry = entry
         cache_current_values
       end
