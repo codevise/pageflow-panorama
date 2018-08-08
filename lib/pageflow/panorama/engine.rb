@@ -6,7 +6,7 @@ module Pageflow
     class Engine < Rails::Engine
       isolate_namespace Pageflow::Panorama
 
-      config.autoload_paths << File.join(config.root, 'lib')
+      config.paths.add('lib', eager_load: true)
       config.i18n.load_path += Dir[config.root.join('config', 'locales', '**', '*.yml').to_s]
     end
   end
