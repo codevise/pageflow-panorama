@@ -45,7 +45,7 @@ module Pageflow
 
         it 'retries when write fails' do
           archive = Zip::File.open(Engine.root.join('spec', 'fixtures', 'some.txt.zip'))
-          bucket = Doubles.bucket_raising_once(AWS::S3::Errors::SlowDown)
+          bucket = Doubles.bucket_raising_once(Aws::S3::Errors::SlowDown.new(nil, 'message'))
           unpack_to_s3 = UnpackToS3.new(archive: archive,
                                         destination_bucket: bucket,
                                         destination_base_path: 'base')
@@ -58,7 +58,7 @@ module Pageflow
 
         it 're-raises exception when write fails too often' do
           archive = Zip::File.open(Engine.root.join('spec', 'fixtures', 'some.txt.zip'))
-          bucket = Doubles.bucket_raising(AWS::S3::Errors::SlowDown)
+          bucket = Doubles.bucket_raising(Aws::S3::Errors::SlowDown.new(nil, 'message'))
           unpack_to_s3 = UnpackToS3.new(archive: archive,
                                         destination_bucket: bucket,
                                         destination_base_path: 'base')
@@ -67,7 +67,7 @@ module Pageflow
 
           expect {
             unpack_to_s3.upload
-          }.to raise_error(AWS::S3::Errors::SlowDown)
+          }.to raise_error(Aws::S3::Errors::SlowDown)
         end
       end
     end

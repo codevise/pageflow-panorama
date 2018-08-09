@@ -8,11 +8,21 @@ module Pageflow
       end
 
       def write(name:, input_stream:, content_length:, content_type:)
-        object = bucket.objects[name]
-        object.write(input_stream,
-                     acl: :public_read,
-                     content_type: content_type,
-                     content_length: content_length)
+        object = bucket.object(name)
+
+        object.put(body: StreamWithSize.new(input_stream, content_length),
+                   acl: 'public-read',
+                   content_type: content_type,
+                   content_length: content_length)
+      end
+
+      class StreamWithSize < SimpleDelegator
+        attr_reader :size
+
+        def initialize(stream, size)
+          super(stream)
+          @size = size
+        end
       end
 
       class Factory
