@@ -46,7 +46,7 @@ module Pageflow
 
         begin
           yield
-        rescue AWS::S3::Errors::SlowDown
+        rescue Aws::S3::Errors::SlowDown
           retries += 1
 
           raise if retries > 5

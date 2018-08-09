@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'pageflow', '~> 13.x'
   spec.add_runtime_dependency 'rubyzip', '~> 1.1'
+  spec.add_runtime_dependency 'aws-sdk-s3', '~> 1.17'
   spec.add_runtime_dependency 'pageflow-public-i18n', '~> 1.0'
 
   spec.add_development_dependency 'pageflow-support', '~> 13.x'
