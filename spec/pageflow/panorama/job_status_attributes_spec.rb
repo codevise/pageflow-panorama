@@ -5,7 +5,7 @@ module Pageflow
     describe JobStatusAttributes do
       describe '#handle' do
         it 'updates phase progress attribute when passed block is called' do
-          record = Package.create!(unpacking_progress: 0)
+          record = Package.create!(attachment: zip_file, unpacking_progress: 0)
 
           JobStatusAttributes.handle(record, stage: :unpacking) do |&progress|
             progress.call(20)
@@ -15,7 +15,7 @@ module Pageflow
         end
 
         it 'sets phase error message if error with message_i18n_key is raised' do
-          record = Package.create!(unpacking_progress: 0)
+          record = Package.create!(attachment: zip_file, unpacking_progress: 0)
           error_with_message_i18n_key = Class.new(RuntimeError) do
             def message_i18n_key
               :i18n_key
@@ -35,7 +35,8 @@ module Pageflow
 
       describe '#reset' do
         it 'resets progress and error message attrbute' do
-          record = Package.create!(unpacking_progress: 20,
+          record = Package.create!(attachment: zip_file,
+                                   unpacking_progress: 20,
                                    unpacking_error_message: 'fail')
 
           JobStatusAttributes.reset(record, stage: :unpacking)
@@ -43,6 +44,10 @@ module Pageflow
           expect(record.unpacking_progress).to eq(0)
           expect(record.unpacking_error_message).to eq(nil)
         end
+      end
+
+      def zip_file
+        File.open(Engine.root.join('spec', 'fixtures', 'krpano.zip'))
       end
     end
   end
