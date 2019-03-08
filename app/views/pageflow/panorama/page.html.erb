@@ -1,4 +1,4 @@
-<div class="blackLayer"></div>
+<div class="black_layer"></div>
 <div class="content_and_background panorama_page">
   <div class="close_button text_hidden_only" tabindex="4" title="<%= t('pageflow.public.panorama.close') %>">
     <div class="label">
@@ -6,9 +6,9 @@
     </div>
   </div>
 
-  <div class="backgroundArea page_background page_background-for_page_with_player_controls">
+  <div class="page_background page_background-for_page_with_player_controls">
     <%= background_image_div(configuration, 'fallback_image') %>
-    <%= content_tag(:div, class: 'videoWrapper iframeWrapper', data: {panorama_url: panorama_url(configuration) }) do %>
+    <%= content_tag(:div, class: 'uncropped_media_wrapper iframeWrapper', data: {panorama_url: panorama_url(configuration) }) do %>
     <% end %>
     <%= shadow_div :opacity => configuration['gradient_opacity'] %>
   </div>
@@ -29,18 +29,8 @@
 
     <div class="scroller">
       <div>
-        <div class="contentWrapper">
-          <div class="page_header">
-            <h2>
-              <span class="tagline"><%= configuration['tagline'] %></span>
-              <span class="title"><%= configuration['title'] %></span>
-              <span class="subtitle"><%= configuration['subtitle'] %></span>
-              <%= background_image_tag(configuration['fallback_image_id'], {"class" => "print_image"}) %>
-            </h2>
-          </div>
-          <div class="contentText">
-            <p><%= raw configuration['text'] %></p>
-          </div>
+        <div class="content_wrapper">
+          <%= page_default_content(page) %>
         </div>
       </div>
     </div>
