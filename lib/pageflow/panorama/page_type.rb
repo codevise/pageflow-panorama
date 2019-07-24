@@ -13,7 +13,8 @@ module Pageflow
         [
           FileType.new(model: Package,
                        editor_partial: 'pageflow/panorama/editor/packages/package',
-                       top_level_type: true)
+                       top_level_type: true,
+                       importer: Panorama::EntryExportImport::FileTypeImporters::PackageImporter)
         ]
       end
 
