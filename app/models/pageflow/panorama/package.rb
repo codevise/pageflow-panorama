@@ -3,7 +3,7 @@ require 'zip'
 module Pageflow
   module Panorama
     class Package < ActiveRecord::Base
-      include HostedFile
+      include UploadableFile
 
       processing_state_machine do
         state 'unpacking'
