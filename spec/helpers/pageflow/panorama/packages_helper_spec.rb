@@ -1,8 +1,11 @@
 require 'spec_helper'
+require 'pageflow/used_file_test_helper'
 
 module Pageflow
   module Panorama
     describe PackagesHelper do
+      include UsedFileTestHelper
+
       describe '#panorama_url' do
         context 'URL panorama source' do
           it 'should return specified panorama url when panorama source is URL' do
@@ -27,8 +30,7 @@ module Pageflow
         end
 
         it 'should return the packages index document path' do
-          @entry = PublishedEntry.new(create(:entry, :published))
-          panorama_package_file = create(:used_file, model: :package, revision: @entry.revision)
+          panorama_package_file = create_used_file(:package)
           configuration = {
             'panorama_package_id' => panorama_package_file.perma_id
           }
