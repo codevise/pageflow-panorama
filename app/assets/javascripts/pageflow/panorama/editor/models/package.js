@@ -1,4 +1,4 @@
-pageflow.panorama.Package = pageflow.HostedFile.extend({
+pageflow.panorama.Package = pageflow.UploadableFile.extend({
   processingStages: [
     {
       name: 'unpacking',

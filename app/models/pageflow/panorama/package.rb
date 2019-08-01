@@ -3,7 +3,7 @@ require 'zip'
 module Pageflow
   module Panorama
     class Package < ActiveRecord::Base
-      include HostedFile
+      include UploadableFile
 
       processing_state_machine do
         state 'unpacking'
@@ -14,11 +14,11 @@ module Pageflow
           transition any => 'unpacking'
         end
 
-        event :retry do
+        event :retry_unpacking do
           transition 'unpacking_failed' => 'unpacking'
         end
 
-        before_transition on: :retry do |package|
+        before_transition on: :retry_unpacking do |package|
           JobStatusAttributes.reset(package, stage: :unpacking)
         end
 
@@ -46,6 +46,10 @@ module Pageflow
 
       def unpack_base_path
         attachment_on_s3.present? ? File.dirname(attachment_on_s3.path(:unpacked)) : nil
+      end
+
+      def retry!
+        retry_unpacking!
       end
     end
   end
