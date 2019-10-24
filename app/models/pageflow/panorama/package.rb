@@ -48,8 +48,13 @@ module Pageflow
         attachment_on_s3.present? ? File.dirname(attachment_on_s3.path(:unpacked)) : nil
       end
 
+      # UploadableFile-overrides
       def retry!
         retry_unpacking!
+      end
+
+      def ready?
+        unpacked?
       end
     end
   end
