@@ -1,4 +1,6 @@
 require 'pageflow/panorama/engine'
+require 'pageflow/panorama/version'
+require 'pageflow/panorama/configuration'
 
 module Pageflow
   module Panorama
