@@ -1,3 +1,5 @@
+require 'rspec/mocks'
+
 module Doubles
   extend RSpec::Mocks::ExampleMethods
   extend self
