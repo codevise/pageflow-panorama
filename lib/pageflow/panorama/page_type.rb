@@ -14,7 +14,7 @@ module Pageflow
       end
 
       def json_seed_template
-        'pageflow/panorama/page_type.json.jbuilder'
+        'pageflow/panorama/page_type'
       end
 
       def thumbnail_candidates
