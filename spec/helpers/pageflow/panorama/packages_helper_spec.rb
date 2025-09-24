@@ -36,7 +36,7 @@ module Pageflow
           }
 
           url = helper.panorama_url(configuration)
-          expect(url).to match(/#{panorama_package_file.id}\/unpacked\/#{panorama_package_file.perma_id}/)
+          expect(url).to match(/#{panorama_package_file.id}\/unpacked\/#{panorama_package_file.id}/)
         end
       end
     end
