@@ -30,13 +30,13 @@ module Pageflow
         end
 
         it 'should return the packages index document path' do
-          panorama_package_file = create_used_file(:package)
+          panorama_package_file = create_used_file(:package, index_document: 'index.html')
           configuration = {
             'panorama_package_id' => panorama_package_file.perma_id
           }
 
           url = helper.panorama_url(configuration)
-          expect(url).to match(/#{panorama_package_file.id}\/unpacked\/#{panorama_package_file.id}/)
+          expect(url).to match(/#{panorama_package_file.id}\/unpacked\/index.html/)
         end
       end
     end
