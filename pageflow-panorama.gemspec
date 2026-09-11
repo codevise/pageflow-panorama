@@ -24,7 +24,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'pageflow-public-i18n', '~> 1.0'
 
   spec.add_development_dependency 'bundler', ['>= 1.0', '< 3']
-  spec.add_development_dependency 'factory_bot_rails', '~> 4.8'
   spec.add_development_dependency 'pageflow-support', ['>= 15.0', '< 18']
   spec.add_development_dependency 'rake', '~> 12.0'
   spec.add_development_dependency 'rspec-rails', '~> 6.0'
