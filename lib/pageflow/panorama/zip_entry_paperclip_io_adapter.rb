@@ -24,8 +24,8 @@ module Pageflow
       end
 
       def copy_to_tempfile(entry)
-        override_existing_file = proc { true }
-        @entry.extract(destination.path, &override_existing_file)
+        entry.get_input_stream { |stream| IO.copy_stream(stream, destination) }
+        destination.rewind
         destination
       end
     end
